@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>User Dashboard</title>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="flex min-h-screen">
+    <!-- Fixed Sidebar -->
+    <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 z-10 overflow-y-auto">
+      <div class="p-3 bg-gray-200 ">
+        <img class="bg-red-500 w-[170px] h-[50px] shadow-2xl ml-6 object-cover rounded-[10px] border-[2px] border-black"
+          src="images/logo.jpg" alt="">
+      </div>
+      <nav class="p-4 space-y-3">
+        <a href="../user_dashboard.html" class="block py-2 hover:text-blue-600">🏠Dashboard</a>
+        <a href="profile_management.html" class="block py-2 hover:text-blue-600">👤Profile Management</a>
+        <a href="artwork_management.html" class="block py-2 hover:text-blue-600">🖼 Artwork Management</a>
+        <a href="sales_and_order.html" class="block py-2 hover:text-blue-600">💰Sales & Orders</a>
+        <a href="analytics.html" class="block py-2 text-blue-600 font-semibold">📊Analytics</a>
+        <a href="messages.html" class="block py-2 hover:text-blue-600">💬Messages</a>
+        <a href="shipping.html" class="block py-2 hover:text-blue-600">📦Shipping</a>
+        <a href="marketing_tools.html" class="block py-2 hover:text-blue-600">📢 Promotion Tools</a>
+        <a href="settings.html" class="block py-2 hover:text-blue-600">⚙ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 ml-64">
+      <h1 class="text-5xl font-semibold mb-4">Artist Dashboard</h1>
+      <h1 class="text-2xl font-semibold mb-4 text-gray-600">Welcome Back, George D wen👋</h1>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <a href="dashboard_features/total_sales.html">
+          <div class="p-4 bg-white shadow rounded">
+            Total Sales: ₹10,000
+            <img class="w-full h-[250px]" src="./images/total_sales.png" alt="">
+          </div>
+        </a>
+        <a href="dashboard_features/total_followers.html">
+          <div class="p-4 bg-white shadow rounded">
+            Followers: 1.2k
+            <img class="w-full h-[250px]" src="images/total_followers.png" alt="">
+          </div>
+        </a>
+        <a href="dashboard_features/this_month.html">
+          <div class="p-4 bg-white shadow rounded">
+            Views This Month: 4.5k
+            <img class="w-full h-[250px]" src="images/this_month.png" alt="">
+          </div>
+        </a>
+        <a href="dashboard_features/analytics.html">
+          <div class="p-4 bg-white shadow rounded">
+            Profile Engagement: 1,200
+            <img class="w-full h-[250px]" src="images/profile engagement.png" alt="">
+          </div>
+        </a>
+        <a href="dashboard_features/sales_and_order.html">
+          <div class="p-4 bg-white shadow rounded">
+            Total Orders: 34
+            <img class="w-full h-[250px]" src="images/total_orders.png" alt="">
+          </div>
+        </a>
+        <a href="dashboard_features/messages.html">
+          <div class="p-4 bg-white shadow rounded">
+            Reviews & Feedback :⭐⭐⭐⭐☆
+            <img class="w-full h-[250px]" src="images/reviews.png" alt="">
+          </div>
+        </a>
+      </div>
+
+    </main>
+  </div>
+</body>

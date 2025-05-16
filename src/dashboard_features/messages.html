@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <title>Messages</title>
+  <style>
+    .scroll-area {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="flex min-h-screen">
+    <!-- Fixed Sidebar -->
+    <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 z-10 overflow-y-auto">
+      <div class="p-3 bg-gray-200 ">
+        <img class="bg-red-500 w-[170px] h-[50px] shadow-2xl ml-6 object-cover rounded-[10px] border-[2px] border-black"
+          src="logo.jpg" alt="">
+      </div>
+      <nav class="p-4 space-y-3">
+        <a href="../user_dashboard.html" class="block py-2 hover:text-blue-600">🏠Dashboard</a>
+        <a href="profile_management.html" class="block py-2 hover:text-blue-600">👤Profile Management</a>
+        <a href="artwork_management.html" class="block py-2 hover:text-blue-600">🖼 Artwork Management</a>
+        <a href="sales_and_order.html" class="block py-2 hover:text-blue-600">💰Sales & Orders</a>
+        <a href="analytics.html" class="block py-2 hover:text-blue-600">📊Analytics</a>
+        <a href="messages.html" class="block py-2 text-blue-600 font-semibold">💬Messages</a>
+        <a href="shipping.html" class="block py-2 hover:text-blue-600">📦Shipping</a>
+        <a href="marketing_tools.html" class="block py-2 hover:text-blue-600">📢 Promotion Tools</a>
+        <a href="settings.html" class="block py-2 hover:text-blue-600">⚙ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 w-full p-6">
+      <button class="mb-4 text-blue-600 hover:underline mx-[30px]">← Back</button>
+      <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow space-y-6">
+        <h1 class="text-2xl font-bold text-center">💬 Messages</h1>
+
+        <!-- Inbox -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3">Inbox</h2>
+          <div class="scroll-area space-y-4">
+            <div class="border p-4 rounded shadow-sm">
+              <div class="font-medium">From: Rahul Sharma</div>
+              <div class="text-sm text-gray-600">"Hi, I love your painting! Is it available in a smaller size?"</div>
+              <div class="mt-2">
+                <button class="text-blue-600 hover:underline">Reply</button>
+              </div>
+            </div>
+            <div class="border p-4 rounded shadow-sm">
+              <div class="font-medium">From: Meera Khatri</div>
+              <div class="text-sm text-gray-600">"Can you do a custom piece with sunset theme?"</div>
+              <div class="mt-2">
+                <button class="text-blue-600 hover:underline">Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reply Box -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3">Reply to Message</h2>
+          <textarea class="w-full p-3 border rounded" rows="4" placeholder="Type your reply here..."></textarea>
+          <button class="mt-3 bg-blue-600 text-white px-4 py-2 rounded">Send Reply</button>
+        </div>
+
+        <!-- Review Responses -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3">Reviews & Feedback</h2>
+          <div class="space-y-4">
+            <div class="p-4 border rounded">
+              <div><strong>Rahul Sharma:</strong> ⭐⭐⭐⭐☆</div>
+              <div class="text-gray-700 text-sm">“Loved the quality and detail in the artwork.”</div>
+              <button class="mt-2 text-blue-600 hover:underline">Respond</button>
+            </div>
+            <div class="p-4 border rounded">
+              <div><strong>Sneha Roy:</strong> ⭐⭐⭐⭐⭐</div>
+              <div class="text-gray-700 text-sm">“Absolutely beautiful! Will order again.”</div>
+              <button class="mt-2 text-blue-600 hover:underline">Respond</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

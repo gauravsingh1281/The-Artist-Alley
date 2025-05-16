@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <title>settings</title>
+  <script>
+    function saveSettings() {
+      alert('All settings have been saved successfully.');
+    }
+    function logoutAllDevices() {
+      alert('You have been logged out from all other devices.');
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="flex min-h-screen">
+    <!-- Fixed Sidebar -->
+    <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 z-10 overflow-y-auto">
+      <div class="p-3 bg-gray-200 ">
+        <img class="bg-red-500 w-[170px] h-[50px] shadow-2xl ml-6 object-cover rounded-[10px] border-[2px] border-black"
+          src="logo.jpg" alt="">
+      </div>
+      <nav class="p-4 space-y-3">
+        <a href="../user_dashboard.html" class="block py-2 hover:text-blue-600">🏠Dashboard</a>
+        <a href="profile_management.html" class="block py-2 hover:text-blue-600">👤Profile Management</a>
+        <a href="artwork_management.html" class="block py-2 hover:text-blue-600">🖼 Artwork Management</a>
+        <a href="sales_and_order.html" class="block py-2 hover:text-blue-600">💰Sales & Orders</a>
+        <a href="analytics.html" class="block py-2 hover:text-blue-600">📊Analytics</a>
+        <a href="messages.html" class="block py-2 hover:text-blue-600">💬Messages</a>
+        <a href="shipping.html" class="block py-2 hover:text-blue-600">📦Shipping</a>
+        <a href="marketing_tools.html" class="block py-2 hover:text-blue-600">📢 Promotion Tools</a>
+        <a href="settings.html" class="block py-2 text-blue-600 font-semibold">⚙ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 w-full p-6">
+      <button class="mb-4 text-blue-600 hover:underline mx-[30px]">← Back</button>
+      <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow space-y-8">
+        <h1 class="text-2xl font-bold text-center">⚙ Settings & Security</h1>
+
+        <!-- Payment Settings -->
+        <section>
+          <h2 class="text-xl font-semibold mb-2">💳 Payment Settings</h2>
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium">Bank Account Number</label>
+              <input type="text" class="w-full p-2 border rounded" placeholder="Enter account number" />
+            </div>
+            <div>
+              <label class="block font-medium">IFSC Code</label>
+              <input type="text" class="w-full p-2 border rounded" placeholder="Enter IFSC code" />
+            </div>
+            <div>
+              <label class="block font-medium">UPI ID (optional)</label>
+              <input type="text" class="w-full p-2 border rounded" placeholder="yourname@upi" />
+            </div>
+          </form>
+        </section>
+
+        <!-- Notification Preferences -->
+        <section>
+          <h2 class="text-xl font-semibold mb-2">🔔 Notification Preferences</h2>
+          <form class="space-y-2">
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Email me about new messages</span>
+            </label><br />
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" checked />
+              <span class="ml-2">Email me about new orders</span>
+            </label><br />
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Send promotional notifications</span>
+            </label>
+          </form>
+        </section>
+
+        <!-- Privacy Settings -->
+        <section>
+          <h2 class="text-xl font-semibold mb-2">🔒 Privacy & Visibility</h2>
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium">Profile Visibility</label>
+              <select class="w-full p-2 border rounded">
+                <option>Public</option>
+                <option>Private</option>
+                <option>Only Buyers</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-medium">Search Engine Indexing</label>
+              <select class="w-full p-2 border rounded">
+                <option>Allow</option>
+                <option>Disallow</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-medium">Display Contact Info</label>
+              <select class="w-full p-2 border rounded">
+                <option>Email & Phone</option>
+                <option>Email Only</option>
+                <option>None</option>
+              </select>
+            </div>
+          </form>
+        </section>
+
+        <!-- Security Settings -->
+        <section>
+          <h2 class="text-xl font-semibold mb-2">🛡 Security Settings</h2>
+          <form class="space-y-4">
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Enable 2FA via SMS</span>
+            </label><br />
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Enable 2FA via Email</span>
+            </label><br />
+            <label class="inline-flex items-center">
+              <input type="checkbox" class="form-checkbox" />
+              <span class="ml-2">Enable Login Alerts</span>
+            </label>
+
+            <div>
+              <label class="block font-medium">Last Login</label>
+              <p class="text-sm text-gray-600">May 13, 2025 - 8:45 PM from Chrome on Windows</p>
+            </div>
+
+            <div>
+              <button type="button" onclick="logoutAllDevices()" class="bg-red-600 text-white px-4 py-2 rounded">Logout
+                from All Devices</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Account Settings -->
+        <section>
+          <h2 class="text-xl font-semibold mb-2">👤 Account Settings</h2>
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium">Change Email</label>
+              <input type="email" class="w-full p-2 border rounded" placeholder="newemail@example.com" />
+            </div>
+            <div>
+              <label class="block font-medium">Change Password</label>
+              <input type="password" class="w-full p-2 border rounded" placeholder="New Password" />
+            </div>
+            <div>
+              <label class="block font-medium">Confirm New Password</label>
+              <input type="password" class="w-full p-2 border rounded" placeholder="Confirm Password" />
+            </div>
+          </form>
+        </section>
+
+        <button onclick="saveSettings()" class="bg-blue-600 text-white px-6 py-2 rounded">Save All Settings</button>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <title>Sales and Order</title>
+  <script>
+    function updateStatus(orderId, status) {
+      alert(`Order #${orderId} status updated to ${status}`);
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="flex min-h-screen">
+    <!-- Fixed Sidebar -->
+    <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 z-10 overflow-y-auto">
+      <div class="p-3 bg-gray-200 ">
+        <img class="bg-red-500 w-[170px] h-[50px] shadow-2xl ml-6 object-cover rounded-[10px] border-[2px] border-black"
+          src="logo.jpg" alt="">
+      </div>
+      <nav class="p-4 space-y-3">
+        <a href="../user_dashboard.html" class="block py-2 hover:text-blue-600">🏠Dashboard</a>
+        <a href="profile_management.html" class="block py-2 hover:text-blue-600">👤Profile Management</a>
+        <a href="artwork_management.html" class="block py-2 hover:text-blue-600">🖼 Artwork Management</a>
+        <a href="sales_and_order.html" class="block py-2 text-blue-600 font-semibold">💰Sales & Orders</a>
+        <a href="analytics.html" class="block py-2 hover:text-blue-600">📊Analytics</a>
+        <a href="messages.html" class="block py-2 hover:text-blue-600">💬Messages</a>
+        <a href="shipping.html" class="block py-2 hover:text-blue-600">📦Shipping</a>
+        <a href="marketing_tools.html" class="block py-2 hover:text-blue-600">📢 Promotion Tools</a>
+        <a href="settings.html" class="block py-2 hover:text-blue-600">⚙ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 w-full p-6">
+      <button class="mb-4 text-blue-600 hover:underline mx-[30px]">← Back</button>
+      <div class="max-w-5xl mx-auto bg-white p-6 rounded shadow space-y-6">
+        <h1 class="text-2xl font-bold mb-4 text-center">💰 Sales & Orders</h1>
+
+        <!-- Current Orders -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3">📦 Current Orders</h2>
+          <div class="overflow-x-auto">
+            <table class="min-w-full table-auto border">
+              <thead>
+                <tr class="bg-gray-200">
+                  <th class="p-2 border">Order ID</th>
+                  <th class="p-2 border">Buyer</th>
+                  <th class="p-2 border">Artwork</th>
+                  <th class="p-2 border">Status</th>
+                  <th class="p-2 border">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-2 border">1001</td>
+                  <td class="p-2 border">Rahul Sharma</td>
+                  <td class="p-2 border">Sunset Dream</td>
+                  <td class="p-2 border">Pending</td>
+                  <td class="p-2 border">
+                    <select onchange="updateStatus(1001, this.value)" class="p-1 border rounded">
+                      <option>Pending</option>
+                      <option>Shipped</option>
+                      <option>Delivered</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-2 border">1002</td>
+                  <td class="p-2 border">Sneha Roy</td>
+                  <td class="p-2 border">Abstract Vibes</td>
+                  <td class="p-2 border">Shipped</td>
+                  <td class="p-2 border">
+                    <select onchange="updateStatus(1002, this.value)" class="p-1 border rounded">
+                      <option>Shipped</option>
+                      <option>Delivered</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+
+        <!-- Custom Requests -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3">🎨 Custom Order Requests</h2>
+          <div class="space-y-4">
+            <div class="p-4 border rounded shadow-sm">
+              <div><strong>Buyer:</strong> Meera Khatri</div>
+              <div><strong>Request:</strong> A 70x100cm painting of a rural Indian scene in watercolor.</div>
+              <div class="mt-2">
+                <button class="bg-green-600 text-white px-4 py-1 rounded mr-2">Accept</button>
+                <button class="bg-red-500 text-white px-4 py-1 rounded">Decline</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sales Summary -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3">📈 Sales Summary</h2>
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Total Orders:</strong> 34</li>
+            <li><strong>Total Earnings:</strong> ₹1,02,500</li>
+            <li><strong>Commissions Received:</strong> ₹87,000</li>
+          </ul>
+        </div>
+
+        <!-- Order Status Chart -->
+        <div>
+          <h2 class="text-xl font-semibold mb-3 text-center">📊 Order Status Breakdown</h2>
+          <div class="w-full max-w-md mx-auto">
+            <canvas id="orderStatusChart" class="w-full h-[300px]"></canvas>
+          </div>
+        </div>
+
+        <script>
+          const ctx = document.getElementById('orderStatusChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              labels: ['Pending', 'Shipped', 'Delivered'],
+              datasets: [{
+                label: 'Order Status',
+                data: [10, 8, 16], // Total = 34
+                backgroundColor: [
+                  'rgba(251, 191, 36, 0.7)', // yellow
+                  'rgba(59, 130, 246, 0.7)', // blue
+                  'rgba(34, 197, 94, 0.7)'   // green
+                ],
+                borderColor: [
+                  'rgba(251, 191, 36, 1)',
+                  'rgba(59, 130, 246, 1)',
+                  'rgba(34, 197, 94, 1)'
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: 'bottom'
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function (context) {
+                      const total = 34;
+                      const count = context.parsed;
+                      const percentage = ((count / total) * 100).toFixed(1);
+                      return `${context.label}: ${count} (${percentage}%)`;
+                    }
+                  }
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

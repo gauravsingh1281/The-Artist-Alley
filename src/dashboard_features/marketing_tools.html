@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <title>Marketing tools</title>
+  <script>
+    function applyFeatured() {
+      alert('Your application for Featured Artist has been submitted!');
+    }
+    function createCoupon() {
+      alert('Coupon created successfully!');
+    }
+    function shareArtwork() {
+      alert('Artwork shared on social media!');
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <div class="flex min-h-screen">
+    <!-- Fixed Sidebar -->
+    <aside class="w-64 h-screen bg-white shadow-md fixed top-0 left-0 z-10 overflow-y-auto">
+      <div class="p-3 bg-gray-200 ">
+        <img class="bg-red-500 w-[170px] h-[50px] shadow-2xl ml-6 object-cover rounded-[10px] border-[2px] border-black"
+          src="logo.jpg" alt="">
+      </div>
+      <nav class="p-4 space-y-3">
+        <a href="../user_dashboard.html" class="block py-2 hover:text-blue-600">🏠Dashboard</a>
+        <a href="profile_management.html" class="block py-2 hover:text-blue-600">👤Profile Management</a>
+        <a href="artwork_management.html" class="block py-2 hover:text-blue-600">🖼 Artwork Management</a>
+        <a href="sales_and_order.html" class="block py-2 hover:text-blue-600">💰Sales & Orders</a>
+        <a href="analytics.html" class="block py-2 hover:text-blue-600">📊Analytics</a>
+        <a href="messages.html" class="block py-2 hover:text-blue-600">💬Messages</a>
+        <a href="shipping.html" class="block py-2 hover:text-blue-600">📦Shipping</a>
+        <a href="marketing_tools.html" class="block py-2 text-blue-600 font-semibold">📢 Promotion Tools</a>
+        <a href="settings.html" class="block py-2 hover:text-blue-600">⚙ Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 w-full p-6">
+      <button class="mb-4 text-blue-600 hover:underline mx-[30px]">← Back</button>
+      <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow space-y-6">
+        <h1 class="text-2xl font-bold text-center">📢 Marketing & Promotion Tools</h1>
+
+        <!-- Featured Artist Application -->
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Apply for Featured Artist</h2>
+          <p class="text-gray-600 mb-3">Get featured on our homepage and social media to gain more visibility.</p>
+          <button onclick="applyFeatured()" class="bg-blue-600 text-white px-4 py-2 rounded">Apply
+            Now</button>
+        </div>
+
+        <!-- Social Media Sharing -->
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Share Artwork on Social Media</h2>
+          <p class="text-gray-600 mb-3">Select an artwork and platform to share your creations with the world.</p>
+          <div class="space-y-3">
+            <select class="w-full p-2 border rounded">
+              <option>Select Artwork</option>
+              <option>Sunset Dream</option>
+              <option>Mountain Scene</option>
+            </select>
+            <select class="w-full p-2 border rounded">
+              <option>Select Platform</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Twitter</option>
+            </select>
+            <button onclick="shareArtwork()" class="bg-green-600 text-white px-4 py-2 rounded">Share
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Discount/Coupon Creator -->
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Create Discount Coupon</h2>
+          <form class="space-y-4">
+            <div>
+              <label class="block font-medium">Coupon Code</label>
+              <input type="text" class="w-full mt-1 p-2 border rounded" placeholder="e.g. SUMMER20" />
+            </div>
+            <div>
+              <label class="block font-medium">Discount (%)</label>
+              <input type="number" class="w-full mt-1 p-2 border rounded" placeholder="e.g. 20" />
+            </div>
+            <div>
+              <label class="block font-medium">Valid Until</label>
+              <input type="date" class="w-full mt-1 p-2 border rounded" />
+            </div>
+            <button type="button" onclick="createCoupon()" class="bg-yellow-500 text-white px-4 py-2 rounded">Create
+              Coupon</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
