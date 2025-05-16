@@ -4,14 +4,924 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
     <title>The Artist Alley</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="/src/output.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Welcome to The Artist Alley
-    </h1>
+<body class="font-[mona-sans] ">
+    <main class="w-full h-full">
+        <header class="mb-6">
+            <nav id="nav" class="w-full h-20  flex justify-between items-center p-6 ">
+                <div class="flex justify-center items-center gap-6">
+                    <img class="w-[210px] mr-6 " src="/images/logo.png" alt="kalaVerse-logo">
+                    <!-- Nav Search bar  -->
+                    <div id="search-bar"
+                        class="w-[400px] flex justify-between items-center relative py-4 px-4 border-2 rounded-full bg-[#f1f1f1] group hover:bg-white hover:border-[#ffdbf9] cursor-pointer hidden">
+                        <input
+                            class="w-[65%] outline-none bg-[#f1f1f1] group-hover:bg-white border-transparent font-normal placeholder:text-black  "
+                            type="text" placeholder="What are you looking for?">
+                        <div class=" absolute right-0 flex items-center justify-center gap-3 py-0 px-7  ">
+                            <div id="nav-search-category"
+                                class="flex justify-center items-center font-semibold cursor-pointer hover:text-[#565564]">
+                                Artworks <i id="nav-search-cat-icon"
+                                    class="ri-arrow-drop-down-line text-2xl font-light "></i>
+                                <!-- Nav Search category links -->
+                                <div id="nav-search-cat-links"
+                                    class="w-[150px] shadow-md p-3 border rounded-lg absolute text-sm bg-white  flex items-start justify-center flex-col gap-2 top-16 left-0 z-10 transition-all ease-in duration-500 hidden ">
+                                    <a href="#"
+                                        class="w-full text-base font-semibold py-1 px-3 hover:bg-[#f1f1f1] rounded-md">Artworks
+                                    </a>
+                                    <a href="#"
+                                        class="w-full  text-base font-light py-1 px-3 hover:bg-[#f1f1f1] rounded-md">Artists
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div><i
+                                    class="ri-search-line text-xl px-2 py-2 bg-[#EA4C89] text-white rounded-full cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="explore" class="flex justify-center items-center  relative">
+                        <a href="#" class="text-lg hover:text-[#565564] ">Explore </a>
+                        <i class="ri-arrow-drop-down-line text-2xl "></i>
+                        <!--Explore sub links-->
+                        <div id="explore-sublinks"
+                            class="w-[220px] shadow-md p-6 border rounded-lg absolute z-10 bg-white  flex items-start justify-center flex-col gap-3 hidden top-16 -left-5  transition-all ease-in duration-500">
+                            <a class="font-semibold hover:text-[#565564]" href="#"><i class="ri-line-chart-line"></i>
+                                Popular</a>
+                            <a class="font-semibold hover:text-[#565564]" href="#"><i class="ri-fire-line"></i> New &
+                                Trending</a>
+                            <div class="w-full h-[1px] bg-[#e5e3e3]"></div>
+                            <div class="flex justify-center items-start flex-col gap-3 ">
+                                <a href="#" class="hover:text-[#565564]">Original Paintings</a>
+                                <a href="#" class="hover:text-[#565564]">Digital Art</a>
+                                <a href="#" class="hover:text-[#565564]">Illustrations</a>
+                                <a href="#" class="hover:text-[#565564]">Sculptures</a>
+                                <a href="#" class="hover:text-[#565564]">Handmade Crafts</a>
+                                <a href="#" class="hover:text-[#565564]">Wall Art</a>
+                                <a href="#" class="hover:text-[#565564]">Textile Art</a>
+                                <a href="#" class="hover:text-[#565564]">Art Prints</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="hire-btn" class="flex justify-center items-center relative hover:text-[#565564]">
+                        <a href="#" class="text-lg">Hire an Artist </a>
+                        <i class="ri-arrow-drop-down-line text-2xl "></i>
+                        <!--Hire a Designer sub links-->
+                        <div id="hire-sublinks"
+                            class="w-[270px] p-6 border shadow-md rounded-lg absolute z-10 bg-white text-black flex items-start justify-center flex-col gap-3 top-16 -left-5 transition-all ease-in duration-500 hidden">
+                            <a class="font-semibold hover:text-[#565564]" href="#"><i class="ri-search-line"></i> Browse
+                                Artists</a>
+                            <a class="font-semibold hover:text-[#565564]" href="#"><i class="ri-message-3-line"></i>
+                                Request Custom Artwork</a>
+                            <a class="font-semibold hover:text-[#565564]" href="#"><i class="ri-briefcase-line"></i>
+                                Post a Commission Project</a>
+                            <a class="font-semibold hover:text-[#565564]" href="#"><i class="ri-information-line"></i>
+                                How Hiring Works</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-lg hover:text-[#565564]">Find Art Projects</a>
+                    <a href="#" class="text-lg hover:text-[#565564]">Blog</a>
+                </div>
+                <div class="flex justify-center items-center gap-6 text-lg">
+                    <button class="hover:text-[#565564]">Sign Up</button>
+                    <button class="py-2 px-5 bg-black text-white rounded-full hover:bg-[#565564]">Login</button>
+                </div>
+            </nav>
+            <section class="w-full h-[400px] flex justify-center items-center flex-col gap-7">
+
+                <h1 class="text-4xl text-center font-semibold ">Explore Original Art from Talented <br> Creators
+                </h1>
+                <p class="text-xl text-center font-light">Explore original work from the most talented independent
+                    artists who turn passion into masterpieces.</p>
+                <!-- Search bar  -->
+                <div
+                    class="w-1/2 flex justify-between items-center relative py-4 px-4 border-2 rounded-full bg-[#f1f1f1] group hover:bg-white hover:border-[#ffdbf9] cursor-pointer">
+                    <input
+                        class="w-3/4 outline-none bg-[#f1f1f1] group-hover:bg-white border-transparent font-normal placeholder:text-black  "
+                        type="text" placeholder="What are you looking for?">
+                    <div class=" absolute right-0 flex items-center justify-center gap-3 py-0 px-7  ">
+                        <div id="search-category"
+                            class="flex justify-center items-center font-semibold cursor-pointer hover:text-[#565564]">
+                            Artworks <i id="search-cat-icon" class="ri-arrow-drop-down-line text-2xl font-light "></i>
+                            <!-- Search category links -->
+                            <div id="search-cat-links"
+                                class="w-[150px] shadow-md p-3 border rounded-lg absolute text-sm bg-white  flex items-start justify-center flex-col gap-2 top-16 left-0 z-10 transition-all ease-in duration-500 hidden ">
+                                <a href="#"
+                                    class="w-full text-base font-semibold py-1 px-3 hover:bg-[#f1f1f1] rounded-md">Artworks
+                                </a>
+                                <a href="#"
+                                    class="w-full  text-base font-light py-1 px-3 hover:bg-[#f1f1f1] rounded-md">Artists
+                                </a>
+                            </div>
+
+                        </div>
+                        <div><i
+                                class="ri-search-line text-xl px-2 py-2 bg-[#EA4C89] text-white rounded-full cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="min-scroll-point" class="flex justify-center items-center gap-4 flex-wrap  ">
+                    <a href="#" class="text-[#b2aeae]">Trending searches</a>
+                    <a href="#" class="bg-[#F1F1F1] py-1 px-4 rounded-full hover:bg-[#FAF9FB]">abstract acrylic
+                        paintings</a>
+                    <a href="#" class="bg-[#F1F1F1] py-1 px-4 rounded-full hover:bg-[#FAF9FB]">traditional indian
+                        art</a>
+                    <a href="#" class="bg-[#F1F1F1] py-1 px-4 rounded-full hover:bg-[#FAF9FB]">madhubani & warli
+                        designs</a>
+                    <a href="#" class="bg-[#F1F1F1] py-1 px-4 rounded-full hover:bg-[#FAF9FB]">handmade clay
+                        sculptures</a>
+
+                </div>
+            </section>
+        </header>
+
+        <section class="w-full h-20  flex justify-between items-center px-[70px] ">
+            <div id="category-btn"
+                class="flex justify-center items-center gap-2  border-2 py-1 px-3 rounded-lg cursor-pointer relative">
+                <p>Popular</p>
+                <i id="arrow-icon" class="ri-arrow-drop-down-line text-2xl "></i>
+                <!--category links-->
+                <div id="category-sublinks"
+                    class="w-[172px] shadow-md p-4 border rounded-lg absolute text-sm bg-white flex items-start justify-center flex-col gap-3 top-16 -left-[3px] z-10 transition-all ease-in duration-500 hidden">
+                    <a href="#"
+                        class=" w-full flex justify-between items-center py-2 px-3 hover:bg-[#f1f1f1] rounded-md">
+                        <p>Popular</p><i class="ri-check-line transition-all ease-in duration-300"></i>
+                    </a>
+                    <a href="#"
+                        class=" w-full flex justify-between items-center py-2 px-3 hover:bg-[#f1f1f1] rounded-md ">
+                        <p>New & Trending</p>
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="flex justify-center items-center gap-10 hover:text-[#565564]">
+                <a href="#" class="bg-[#F1F1F1] py-1 px-4 rounded-full ">Discover</a>
+                <a href="#">Abstract</a>
+                <a href="#">Traditional</a>
+                <a href="#">Portrait</a>
+                <a href="#">Sculpture</a>
+                <a href="#">Illustration</a>
+                <a href="#">Digital Art</a>
+                <a href="#"><i class="ri-arrow-drop-right-line text-3xl"></i></a>
+            </div>
+            <div id="filter-btn"
+                class="flex justify-center items-center gap-3 border-2 py-1 px-4 rounded-full cursor-pointer">
+                <i class="ri-filter-3-line text-2xl"></i>
+                <p>Filter</p>
+            </div>
+        </section>
+        <section id="filter-option" class="flex justify-center items-center w-full px-[70px] gap-8 hidden">
+            <div class=" w-[350px] flex justify-center items-start gap-3 flex-col">
+                <p>Tags</p>
+                <div
+                    class="w-full flex justify-center items-center gap-5 py-4 px-4 border-2 border-[#f1f1f1] rounded-lg bg-white font-normal  hover:border-[#ffdbf9]">
+                    <i class="ri-search-line"></i>
+                    <input type="text" class="w-full outline-none ">
+                </div>
+
+            </div>
+            <div class="w-[350px] flex justify-center items-start gap-3 flex-col">
+                <p>Color</p>
+                <div
+                    class="flex justify-between items-center w-full border-2 border-[#f1f1f1] py-4 px-4  hover:border-[#ffdbf9] outline-none  rounded-lg">
+                    <div class="flex justify-center items-center gap-2"><i class="ri-palette-line"></i>Select
+                        Color
+                    </div>
+                    <input type="color" class=" bg-white font-normal   ">
+                </div>
+
+            </div>
+            <div class=" w-[350px] flex justify-center items-start gap-3 flex-col">
+                <p>Timeframe</p>
+                <div class="w-full py-4 px-4 border-2 border-[#f1f1f1] rounded-lg bg-white hover:border-[#ffdbf9]">
+                    <select class="w-full outline-none  font-normal   ">
+                        <option>Now <i class="ri-check-line text-black"></i></option>
+                        <option>This Past Week</option>
+                        <option>This Past Month</option>
+                        <option>This Past Year</option>
+                        <option>All Time</option>
+                    </select>
+                </div>
+
+            </div>
+        </section>
+        <section class="w-full  flex items-center justify-center flex-wrap py-6 px-[70px] gap-8">
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden  rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top "
+                        src="https://artmart-wp.egenstheme.com/wp-content/uploads/2025/01/product-10.webp" alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Golden Horizon: Metallic Sunset Wall Décor</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/1057940/avatars/small/f068710cc8e5fcebcbcd8f1f75d1b4ef.gif?1732126488"
+                            alt="">
+                        <p>Nixtio</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black  cursor-pointer">
+                            TEAM</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>154</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>7.9K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden   rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top "
+                        src="https://artmart-wp.egenstheme.com/wp-content/uploads/2025/01/product-13.webp" alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class=" text-white text-lg">Ocean Waves: Textured Acrylic Art Panel</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/3562273/avatars/small/43144f024e2488897dd56b01c8c1cabb.jpg?1725397127"
+                            alt="">
+                        <p>Angie Mathot</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>93</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>13.7K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden  rounded-lg flex justify-center items-center relative group">
+                    <img class="w-full h-full object-top object-cover "
+                        src="https://artmart-wp.egenstheme.com/wp-content/uploads/2025/01/product-20.webp" alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Bold Statements: Geometric Wall Art Pieces</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/4053754/avatars/small/55dd34a2285fa77014068c00427eee21.png?1729855991"
+                            alt="">
+                        <p>Phenomenon Studio</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            TEAM</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer"></i>
+                            <p>345</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>12K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit overflow-hidden   rounded-lg flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top "
+                        src="https://artmart-wp.egenstheme.com/wp-content/uploads/2025/01/product-5.webp" alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Eco-Friendly Art Made from Recycled Materials</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/6454839/avatars/small/a615730b861d93eaebc6a7c1ec276489.jpg?1622535470"
+                            alt="">
+                        <p>Yayoi Kusama</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer"></i>
+                            <p>79</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>1.9K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden   rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top  "
+                        src="https://arts.mojarto.com/siteImages/curatedCollection/11710706/web/384/11710706.jpg"
+                        alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Echoes of the Blue</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/3825057/avatars/small/e3d7cb6ed0671937f1a7226e2cc449f1.png?1581940719"
+                            alt="">
+                        <p>Sanjay Parhad</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>79</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>4K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden   rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top"
+                        src="https://arts.mojarto.com/siteImages/curatedCollection/11431654/web/384/11431654.jpg"
+                        alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Rustic Life Captured</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/8091042/avatars/small/99dc841623e62488ba5efa3433db80f7.jpg?1637655333"
+                            alt="">
+                        <p>Demyanchuk Art Team</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>79</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>18K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden   rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top"
+                        src="https://www.artzolo.com/cdn/shop/files/culture-series-7-rahul-pawar.jpg?v=1743506134&width=600"
+                        alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Culture acrylic Figurative Painting</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/68544/avatars/small/4c145fcf55db7976aa63183a03c7aa65.png?1672415553"
+                            alt="">
+                        <p>Manisha Agarwal</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>459</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>8K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden   rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top"
+                        src="https://www.artzolo.com/cdn/shop/files/Untitled-1-ArtZolo-com-8733.jpg?v=1706727554&width=600"
+                        alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-xl">The Tree of Life Warli Nature Art</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/1057940/avatars/small/f068710cc8e5fcebcbcd8f1f75d1b4ef.gif?1732126488"
+                            alt="">
+                        <p>Nikita Mundekar</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>579</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>13K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card-->
+            <div>
+                <div
+                    class="w-[350px] h-fit  overflow-hidden   rounded-lg  flex justify-center items-center relative group">
+                    <img class="w-full h-full object-cover object-top"
+                        src="https://www.artzolo.com/cdn/shop/files/Warli-Art-23-ArtZolo-com-4670.jpg?v=1706727558&width=600"
+                        alt="">
+                    <!-- Card bottom-->
+                    <div
+                        class="absolute h-1/4 w-full -bottom-1/4 group-hover:bottom-0 transition-all ease-in duration-300 flex justify-between items-center  px-4 bg-gradient-to-b from-transparent to-[#4b4a4a]">
+                        <h1 class="  text-white text-lg">Warli Figurative Traditional Art</h1>
+                        <div class="flex items-center justify-center gap-5">
+                            <i class="ri-bookmark-line py-2  px-3 text-xl bg-white  rounded-full"></i>
+                            <i class="ri-heart-line py-2 px-3 text-xl bg-white rounded-full"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center  py-2 px-0">
+
+                    <div class="flex justify-center items-center gap-2">
+                        <img class="w-8 rounded-full"
+                            src="https://cdn.dribbble.com/users/78433/avatars/small/967957c559c6e2bd835a11443829a29a.png?1695711651"
+                            alt="">
+                        <p>Pradeep Swain</p>
+                        <p
+                            class="bg-[#B5BDBA] px-[5px] py-0 text-sm rounded-sm text-white hover:bg-black cursor-pointer">
+                            PRO</p>
+                    </div>
+                    <div class="flex justify-center items-center gap-2 ">
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-heart-fill text-xl text-[#B5BDBA]  hover:text-[#EA64D9] cursor-pointer "></i>
+                            <p>759</p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-1">
+                            <i class="ri-eye-fill text-xl text-[#B5BDBA] "></i>
+                            <p>138K</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="w-full h-32  flex justify-center items-center relative">
+            <button class="py-2 px-7 bg-black text-white rounded-full text-lg hover:bg-[#565564]">Sign up to
+                continue</button>
+            <button onclick="goUp()" id="top-btn"
+                class="py-2 px-3 bg-[#BDBDBD] rounded-full text-white fixed bottom-6 right-3 hover:bg-[#4D4D4D] z-60 hidden">
+                <i class="ri-arrow-up-line text-2xl"></i>
+            </button>
+        </section>
+        <!-- marquee animation  -->
+        <section id="marquee-container"
+            class="w-full h-[220px] relative overflow-hidden flex items-center justify-center ">
+            <div id="marquee-content"
+                class="w-full h-full  absolute grid grid-rows-1 grid-flow-col gap-10 cursor-pointer ">
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1688223368687-aa87b0d58840?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9yaWdpbmFsJTIwcGFpbnRpbmdzfGVufDB8fDB8fHww"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-cover object-center ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Original Paintings</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://plus.unsplash.com/premium_photo-1700165319849-19f5f7ab8ba7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8RGlnaXRhbCUyMEFydHxlbnwwfHwwfHx8MA%3D%3D"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-center object-cover  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Digital Art</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1628130235364-9e412ffaae5a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8SWxsdXN0cmF0aW9uc3xlbnwwfHwwfHx8MA%3D%3D"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-cover object-center ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Illustrations</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://media.istockphoto.com/id/1265863398/photo/goddess-durga-idols.webp?a=1&b=1&s=612x612&w=0&k=20&c=KoKm-aSzIxbxdGgjCAWTQ0_rg8Znay8-nwUIitGfkY0="
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-center object-cover ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Sculptures</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1631037513088-0694f5f7bc2f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEhhbmRtYWRlJTIwQ3JhZnRzfGVufDB8fDB8fHww"
+                                class="w-full h-[150px] object-center object-cover rounded-lg border-white border-[2px]  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Handmade Crafts</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1494442182929-0f8be054d08c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFdhbGwlMjBBcnR8ZW58MHx8MHx8fDA%3D"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-center object-cover  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Wall Art</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1723056891785-bc194410bf4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHRleHRpbGUlMjBhcnR8ZW58MHx8MHx8fDA%3D"
+                                class="w-full h-[150px] object-center object-cover rounded-lg border-white border-[2px]  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Textile Art</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://media.istockphoto.com/id/695773692/photo/stack-of-photo-cards.jpg?s=612x612&w=0&k=20&c=jxdvkWklWgC7ont4Hk3a2z6XT6TlmuYGi4jZpmnCKKU="
+                                class="w-full h-[150px] object-center object-cover rounded-lg border-white border-[2px]  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Art Prints</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1688223368687-aa87b0d58840?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG9yaWdpbmFsJTIwcGFpbnRpbmdzfGVufDB8fDB8fHww"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-cover object-center ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Original Paintings</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://plus.unsplash.com/premium_photo-1700165319849-19f5f7ab8ba7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8RGlnaXRhbCUyMEFydHxlbnwwfHwwfHx8MA%3D%3D"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-center object-cover  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Digital Art</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1628130235364-9e412ffaae5a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8SWxsdXN0cmF0aW9uc3xlbnwwfHwwfHx8MA%3D%3D"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-cover object-center ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Illustrations</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://media.istockphoto.com/id/1265863398/photo/goddess-durga-idols.webp?a=1&b=1&s=612x612&w=0&k=20&c=KoKm-aSzIxbxdGgjCAWTQ0_rg8Znay8-nwUIitGfkY0="
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-center object-cover ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Sculptures</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1631037513088-0694f5f7bc2f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEhhbmRtYWRlJTIwQ3JhZnRzfGVufDB8fDB8fHww"
+                                class="w-full h-[150px] object-center object-cover rounded-lg border-white border-[2px]  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Handmade Crafts</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1494442182929-0f8be054d08c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFdhbGwlMjBBcnR8ZW58MHx8MHx8fDA%3D"
+                                class="w-full h-[150px] rounded-lg border-white border-[2px] object-center object-cover  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Wall Art</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://images.unsplash.com/photo-1723056891785-bc194410bf4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHRleHRpbGUlMjBhcnR8ZW58MHx8MHx8fDA%3D"
+                                class="w-full h-[150px] object-center object-cover rounded-lg border-white border-[2px]  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Textile Art</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class=" w-[200px] h-full flex justify-center items-start flex-col marquee-element gap-3 ">
+
+                        <div class="w-full relative">
+                            <img src="https://media.istockphoto.com/id/695773692/photo/stack-of-photo-cards.jpg?s=612x612&w=0&k=20&c=jxdvkWklWgC7ont4Hk3a2z6XT6TlmuYGi4jZpmnCKKU="
+                                class="w-full h-[150px] object-center object-cover rounded-lg border-white border-[2px]  ">
+                            <div
+                                class="stack1 w-full h-full rounded-lg  border-[2px] absolute -top-[6px] -right-[6px] bg-[#b9f5a5]">
+                            </div>
+                            <div
+                                class=" stack2 w-full h-full rounded-lg absolute -top-[12px] -right-[12px] border-[2px] bg-[#f0bfe0]">
+                            </div>
+                        </div>
+
+                        <p>Art Prints</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        <footer class="w-full p-7">
+            <div class="flex justify-between items-center w-full h-32">
+                <img class="w-[230px]" src="/images/logo.png" alt="kalaVerse-logo">
+                <div class=" flex justify-center items-center gap-7 text-[16px] font-semibold">
+                    <a href="#">For Artists</a>
+                    <a href="#">Commission Work</a>
+                    <a href="#">Discover Art</a>
+                    <a href="#">Sell Your Art</a>
+                    <a href="#">Blog</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="flex justify-center items-center gap-3 cursor-pointer text-2xl">
+                    <i class="ri-twitter-x-line"></i>
+                    <i class="ri-facebook-box-fill"></i>
+                    <i class="ri-instagram-line"></i>
+                    <i class="ri-pinterest-fill"></i>
+                </div>
+            </div>
+            <div class="flex justify-between items-center  text-md font-light text-[#6E6D7A]">
+                <div class="flex justify-center items-center gap-3">
+                    <a href="#">© 2025 ArtistAlley</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                </div>
+                <div class="flex justify-center items-center gap-5">
+                    <a href="#">Open Art Jobs</a>
+                    <a href="#">Top Creators</a>
+                    <a href="#">Freelancers</a>
+                    <a href="#">Tags</a>
+                    <a href="#">Places</a>
+                    <a href="#">Resources</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="/index.js"></script>
 </body>
 
 </html>
